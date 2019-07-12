@@ -1,0 +1,288 @@
+//_config.scss-------------------------------------------
+$primary-color: #444;
+$secondary-color: #ff702d;
+$show_home_image: true;
+$home_image: url(../img/carlsbad.jpg);
+$background-opacity: 0.7;
+@mixin easeOut{
+    transition: all 1s ease-out;
+}
+@mixin background {
+    @if $show_home_image{
+        &#bg_img{
+            background: $home_image;
+            background-attachment: fixed;
+            background-size: cover;
+            
+            .overlay{
+                position: absolute;
+                top:0;
+                right:0;
+                width:100%;
+                height:100%;
+                background: rgba($primary-color, $background-opacity);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+//main.scss-----------------------------------
+* {
+    box-sizing: border-box;
+    
+}
+body{
+    @include background;
+    height:100%;
+    background: $primary-color;
+    color:white;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 2;
+}
+h1, h2 {
+    margin:0;
+    &.home_name{
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    &.home_description{
+        margin-bottom: 3rem;
+        font-weight: 500;
+    }
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+header {
+    position: fixed;
+    z-index: 2;
+    width:100%;
+}
+.name_last{
+    color:$secondary-color;
+}
+main{
+    padding:4rem;
+    min-height: calc(100vh-60px);
+    &#home{
+        overflow: hidden;
+        h1{
+            margin-top: 7vh;
+        }
+    }
+    .social_icons{
+        margin-top: 1rem;
+    }
+    a{
+        padding: 0.5rem;
+        &:hover{
+            color:$secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+//_menu.scss-------------------------------------
+.menu_button {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+    //create the appearance of button
+    .button_line{
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: white;
+        @include easeOut; 
+    }
+    //rotate button on click
+    &.close {
+        transform: rotate(180deg);
+        .button_line {
+            //line 1 - rotate
+            &:nth-child(1){
+                transform: rotate(45deg) translate(5px, 5px)
+            }
+            //line 2 - Hide
+            &:nth-child(2){
+                opacity: 0;
+            }
+            //line 3 - rotate
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(7px, -6px)
+            }
+        }
+    }
+}
+
+//menu overlay
+.menu{
+    position: fixed;
+    top:0;
+    width:100%;
+    visibility: hidden;
+    &.show{
+        visibility: visible;
+    }
+    .menu_brand, .menu_navigation{
+        display:flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float:left;
+        width:50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .menu_navigation{
+        margin:0;
+        padding:0;
+        background: darken($primary-color, 5);
+        list-style: none;
+        transform: translate3d(0,-100%,0);
+        @include easeOut;
+        opacity: 0.9;
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+    }
+    .menu_brand{
+        background:$primary-color;
+        transform: translate3d(0,100%,0);
+        @include easeOut;
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+        .menu_portrait{
+            width:250px;
+            height:250px;
+            background: url('../img/me.jpeg');
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+        }
+    }
+
+    .menu_item{
+        transform: translate3d(600px,0,0);
+        @include easeOut;
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+        &.current > a{
+            color:$secondary-color;
+        }
+    }
+    .menu_item_link{
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        @include easeOut;
+        &:hover{
+            color:$secondary-color;
+        }
+    }
+}
+@for $x from 1 through 4{
+    .menu_item:nth-child(#{$x}){
+        transition-delay:$x*0.1s;
+    }
+}
+
+//about me----------------------------------
+.about_info{
+    grid-gap: 30px;
+    display: grid;
+    grid-template-areas: 'bio-image bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+    .bio_img{
+        height:250px;
+        width:250px;
+        grid-area: bio-image;
+        margin:auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+    .bio{
+        grid-area: bio;
+    }
+    .job_one{
+        grid-area: job1;
+    }
+    .job_two{
+        grid-area: job2;
+    }
+    .job_three{
+        grid-area: job3;
+    }
+    .job{
+        background: lighten($primary-color,5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 6px solid;
+    }
+}
+
+//my work---------------------------
+.projects{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    img{
+        width:100%;
+        border:3px white solid;
+
+        &:hover{
+            opacity:0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+//contact me-------------------------------
+.boxes{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    div{
+        font-size: 2rem;
+        border: 3px white solid;
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover{
+            padding:0.5rem 1.5rem;
+            background: $secondary-color;
+            color:black;
+            span{
+                color:white;
+            }
+        }
+    }
+    .text_secondary{
+        color: $secondary-color;
+
+    }
+}
+
+// #main_footer{
+//     text-align: center;
+//     padding: 1rem;
+//     background: darken($primary-color,10);
+//     color: $primary-color;
+//     height: 60px;
+// }

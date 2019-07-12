@@ -1,0 +1,56 @@
+@mixin media_S{
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
+@mixin media_M{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+@mixin media_L{
+    @media screen and (min-width: 769px) and (max-width:1170px){
+        @content;
+    }
+}
+@mixin media_XL{
+    @media screen and (min-width: 1171px){
+        @content;
+    }
+}
+
+//_mobile.scss--------------------------------
+//phones
+@include media_S{
+    main#home h1{
+        margin-top: 10vh;
+    }
+}
+//tablets
+@include media_M{
+    main{
+        align-items: center;
+        text-align: center;
+        .home_name{
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+    .about_info{
+        grid-template-areas: 
+        'bio-image'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+        grid-template-columns: 1fr;
+    }
+}
+//desktops
+@include media_L{
+    
+}
+//widescreens
+@include media_XL{
+    
+}
