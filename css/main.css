@@ -157,8 +157,8 @@ main {
   .about_info p {
     text-indent: 2.0em; }
   .about_info .bio_img {
-    height: 350px;
-    width: 350px;
+    height: 450px;
+    width: 450px;
     grid-area: bio-image;
     margin: auto;
     border-radius: 50%;
