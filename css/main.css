@@ -95,7 +95,6 @@
   box-sizing: border-box; }
 
 body {
-  height: 100%;
   background: #444;
   color: white;
   margin: 0;
@@ -138,7 +137,7 @@ header {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh-60px); }
+  height: 100%; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -218,12 +217,20 @@ main {
       margin-top: 10vh; }
     main .home_name {
       margin-top: 1rem;
-      font-size: 4rem; }
+      font-size: 3rem; }
+    main .home_description {
+      font-size: 1.2rem; }
+    main .bio {
+      font-size: 0.8rem; }
   .about_info .bio_img {
     width: 150px;
     height: 150px; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .boxes div {
+    font-size: 1rem;
+    border: 2px white solid;
+    padding: 0.8rem; } }
 
 @media screen and (max-width: 768px) {
   main {
