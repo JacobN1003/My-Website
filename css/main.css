@@ -230,12 +230,12 @@ main {
     transform: translate3d(0, 100%, 0);
     height: 15vh; }
     .menu .menu_brand .menu_portrait {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       background: url("../img/mebutsmaller.jpeg");
       background-size: 100%;
       border-radius: 50%;
-      border: solid 3px #ff702d; }
+      border: solid 2px #ff702d; }
   .menu .menu_navigation {
     height: 85vh;
     transform: translate3d(0, -100%, 0);
