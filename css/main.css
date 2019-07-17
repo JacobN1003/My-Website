@@ -224,26 +224,6 @@ main {
       font-size: 1.2rem; }
     main .bio {
       font-size: 0.8rem; }
-  .menu .menu_brand, .menu .menu_navigation {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-  .menu .menu_brand {
-    transform: translate3d(0, 100%, 0);
-    height: 15vh; }
-    .menu .menu_brand .menu_portrait {
-      width: 80px;
-      height: 80px;
-      background: url("../img/mebutsmaller.jpeg");
-      background-size: 100%;
-      border-radius: 50%;
-      border: solid 2px #ff702d; }
-  .menu .menu_navigation {
-    height: 85vh;
-    transform: translate3d(0, -100%, 0);
-    transition: all 0.7s ease-out; }
-    .menu .menu_navigation.show {
-      transform: translate3d(0, 0, 0); }
   .about_info .bio_img {
     width: 150px;
     height: 150px; }
@@ -269,8 +249,8 @@ main {
     transform: translate3d(0, 100%, 0);
     height: 15vh; }
     .menu .menu_brand .menu_portrait {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       background: url("../img/me.jpeg");
       background-size: 100%;
       border-radius: 50%;
