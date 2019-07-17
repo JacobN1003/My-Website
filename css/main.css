@@ -232,8 +232,8 @@ main {
     transform: translate3d(0, 100%, 0);
     height: 15vh; }
     .menu .menu_brand .menu_portrait {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background: url("../img/mebutsmaller.jpeg");
       background-size: 100%;
       border-radius: 50%;
@@ -271,7 +271,7 @@ main {
     .menu .menu_brand .menu_portrait {
       width: 150px;
       height: 150px;
-      background: url("../img/mebutsmaller.jpeg");
+      background: url("../img/me.jpeg");
       background-size: 100%;
       border-radius: 50%;
       border: solid 3px #ff702d; }
