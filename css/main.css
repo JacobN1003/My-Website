@@ -247,7 +247,7 @@ main {
     min-height: 0; }
   .menu .menu_brand {
     transform: translate3d(0, 100%, 0);
-    height: 15vh; }
+    height: 20vh; }
     .menu .menu_brand .menu_portrait {
       width: 100px;
       height: 100px;
@@ -256,7 +256,7 @@ main {
       border-radius: 50%;
       border: solid 3px #ff702d; }
   .menu .menu_navigation {
-    height: 85vh;
+    height: 80vh;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
     .menu .menu_navigation.show {
