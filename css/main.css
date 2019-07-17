@@ -188,6 +188,8 @@ main {
       opacity: 0.5;
       border-color: #ff702d;
       transition: all 0.7s ease-out; }
+  .projects .item {
+    text-indent: 0.6em; }
 
 .boxes {
   display: flex;
