@@ -14,16 +14,11 @@
   .menu_button.close {
     transform: rotate(180deg); }
     .menu_button.close .button_line:nth-child(1) {
-      transform: rotate(405deg) translate(5px, 5px); }
+      transform: rotate(45deg) translate(5px, 5px); }
     .menu_button.close .button_line:nth-child(2) {
       opacity: 0; }
     .menu_button.close .button_line:nth-child(3) {
-      transform: rotate(-405deg) translate(7px, -6px); }
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%; }
+      transform: rotate(-45deg) translate(7px, -6px); }
 
 .menu {
   position: fixed;
@@ -42,7 +37,7 @@ header {
     overflow: hidden; }
   .menu .menu_brand {
     justify-content: center;
-    background: #444;
+    background: rgba(68, 68, 68, 0.8);
     transform: translate3d(0, 100%, 0);
     transition: all 0.7s ease-out; }
     .menu .menu_brand.show {
@@ -306,7 +301,7 @@ main {
       transform: translate3d(0, 0, 0); }
     .menu .menu_navigation .menu_item {
       position: relative;
-      top: -8rem; }
+      top: -6rem; }
   .about_info {
     grid-template-areas: 'bio-image' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
