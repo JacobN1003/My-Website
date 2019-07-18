@@ -1,3 +1,4 @@
+//Menu Overlay-------------------------------------------------------------
 const menuButton = document.querySelector('.menu_button')
 const menu = document.querySelector('.menu')
 const menuBrand = document.querySelector('.menu_brand')
@@ -5,7 +6,6 @@ const menuNavigation = document.querySelector('.menu_navigation')
 const menuItems = document.querySelectorAll('.menu_item')
 
 let showMenu = false;
-
 menuButton.addEventListener('click', toggleMenu)
 function toggleMenu(){
     if(!showMenu){
@@ -26,3 +26,34 @@ function toggleMenu(){
         showMenu = false;
     }
 }
+
+//Map Overlay------------------------------------------------------------------
+const address_button = document.querySelector('.address_button')
+const mapButton = document.querySelector('.mapButton')
+const map = document.querySelector('.map')
+const map_canvas = document.querySelector('.map_canvas')
+
+let showMap = false;
+address_button.addEventListener('click', toggleMap)
+mapButton.addEventListener('click', toggleMap)
+function toggleMap(){
+    if(!showMap){
+        address_button.classList.add('close');
+        mapButton.classList.add('show');
+        map.classList.add('show');
+        map_canvas.classList.add('show');
+        
+        showMap = true;
+    }else{
+        mapButton.classList.remove('close');
+        mapButton.classList.remove('show');
+        map.classList.remove('show');
+        map_canvas.classList.remove('show');
+        
+        showMap = false;
+    }
+}
+
+//Email Box ->
+//ttps://css-tricks.com/all-about-mailto-links/
+

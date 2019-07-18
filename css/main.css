@@ -14,11 +14,11 @@
   .menu_button.close {
     transform: rotate(180deg); }
     .menu_button.close .button_line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
+      transform: rotate(405deg) translate(5px, 5px); }
     .menu_button.close .button_line:nth-child(2) {
       opacity: 0; }
     .menu_button.close .button_line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px); }
+      transform: rotate(-405deg) translate(7px, -6px); }
 
 header {
   position: fixed;
@@ -158,13 +158,14 @@ main {
   .about_info p {
     text-indent: 2.0em; }
   .about_info .bio_img {
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     grid-area: bio-image;
     margin: auto;
     border-radius: 50%;
     border: #ff702d 3px solid; }
   .about_info .bio {
+    text-align: center;
     grid-area: bio; }
   .about_info .job_one {
     grid-area: job1; }
@@ -205,22 +206,54 @@ main {
     transition: all 0.7s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      background: #ff702d;
-      color: black; }
+      background: #ff702d; }
+      .boxes div:hover a {
+        color: black; }
       .boxes div:hover span {
         color: white; }
   .boxes .text_secondary {
     color: #ff702d; }
+  .boxes .address_button {
+    cursor: pointer; }
+    .boxes .address_button:hover {
+      color: black; }
+
+.map {
+  position: fixed;
+  visibility: hidden;
+  overflow: hidden; }
+  .map.show {
+    visibility: visible;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #303030; }
+
+.map_canvas {
+  height: 90%;
+  width: 90%;
+  margin: auto; }
+  .map_canvas iframe {
+    width: 100%;
+    height: 100%; }
+  .map_canvas .mapButton {
+    cursor: pointer;
+    text-align: right; }
+    .map_canvas .mapButton:hover {
+      color: #ff702d; }
 
 #main_footer {
   width: 100%;
   bottom: 0;
   position: fixed;
   text-align: center;
-  padding: 1rem;
+  padding: 0.6rem;
   background: #2b2b2b;
   color: #444;
-  height: 60px; }
+  height: 50px; }
 
 @media screen and (max-width: 500px) {
   main {
