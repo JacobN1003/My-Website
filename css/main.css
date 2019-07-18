@@ -301,6 +301,7 @@ main {
       transform: translate3d(0, 0, 0); }
     .menu .menu_navigation .menu_item {
       position: relative;
+      top: -4rem;
       left: -5rem; }
   .about_info {
     grid-template-areas: 'bio-image' 'bio' 'job1' 'job2' 'job3';
