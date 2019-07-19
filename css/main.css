@@ -294,14 +294,15 @@ main {
       border-radius: 50%;
       border: solid 3px #ff702d; }
   .menu .menu_navigation {
-    min-height: calc(85vh-60px);
+    height: 85vh;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
     .menu .menu_navigation.show {
       transform: translate3d(0, 0, 0); }
     .menu .menu_navigation .menu_item {
       position: relative;
-      top: -6rem;
+      border: 5px solid black;
+      top: -20%;
       left: -5rem; }
   .about_info {
     grid-template-areas: 'bio-image' 'bio' 'job1' 'job2' 'job3';
