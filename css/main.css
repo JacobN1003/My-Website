@@ -52,8 +52,7 @@
   .menu .menu_navigation {
     margin: 0;
     justify-content: center;
-    opacity: 0.9;
-    background: #373737;
+    background: rgba(55, 55, 55, 0.8);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
@@ -285,7 +284,7 @@ main {
     min-height: 0; }
   .menu .menu_brand {
     transform: translate3d(0, 100%, 0);
-    height: 15vh; }
+    height: 20vh; }
     .menu .menu_brand .menu_portrait {
       width: 100px;
       height: 100px;
@@ -294,16 +293,15 @@ main {
       border-radius: 50%;
       border: solid 3px #ff702d; }
   .menu .menu_navigation {
-    height: 85vh;
+    height: 80vh;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
     .menu .menu_navigation.show {
       transform: translate3d(0, 0, 0); }
     .menu .menu_navigation .menu_item {
       position: relative;
-      border: 5px solid black;
-      top: -20%;
-      left: -5rem; }
+      top: -8%;
+      left: -1.5rem; }
   .about_info {
     grid-template-areas: 'bio-image' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
