@@ -52,7 +52,7 @@
   .menu .menu_navigation {
     margin: 0;
     justify-content: center;
-    background: rgba(55, 55, 55, 0.8);
+    background: rgba(55, 55, 55, 0.9);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
@@ -213,20 +213,28 @@ main {
       color: black; }
 
 .map {
-  position: fixed;
+  position: absolute;
   visibility: hidden;
-  overflow: hidden; }
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 95%;
+  transform: translate(-100%);
+  transition: all 0.7s ease-out; }
   .map.show {
     visibility: visible;
-    z-index: 2;
     top: 0;
     left: 0;
-    margin: 0;
     width: 100%;
-    height: 100%;
-    background: #303030; }
+    height: 95%;
+    background: rgba(55, 55, 55, 0.9);
+    transform: translate(0%);
+    transition: all 0.7s ease-out; }
 
 .map_canvas {
+  position: relative;
+  top: 5%;
   height: 90%;
   width: 90%;
   margin: auto; }
@@ -234,9 +242,10 @@ main {
     width: 100%;
     height: 100%; }
   .map_canvas .mapButton {
-    cursor: pointer;
+    position: relative;
     text-align: right; }
-    .map_canvas .mapButton:hover {
+    .map_canvas .mapButton span:hover {
+      cursor: pointer;
       color: #ff702d; }
 
 #main_footer {
