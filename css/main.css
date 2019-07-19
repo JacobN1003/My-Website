@@ -37,7 +37,7 @@
     overflow: hidden; }
   .menu .menu_brand {
     justify-content: center;
-    background: rgba(68, 68, 68, 0.8);
+    background: rgba(68, 68, 68, 0.9);
     transform: translate3d(0, 100%, 0);
     transition: all 0.7s ease-out; }
     .menu .menu_brand.show {
@@ -52,7 +52,7 @@
   .menu .menu_navigation {
     margin: 0;
     justify-content: center;
-    background: rgba(55, 55, 55, 0.9);
+    background: rgba(53, 53, 53, 0.9);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.7s ease-out; }
@@ -99,18 +99,18 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 2; }
-  body#bg_img {
+  body#bg_img, body#about {
     background: url(../img/carlsbad.jpg);
     background-attachment: fixed;
     background-size: cover; }
-    body#bg_img:after {
+    body#bg_img#bg_img:after, body#about#bg_img:after {
       content: '';
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
-      background: rgba(68, 68, 68, 0.7);
+      background: rgba(68, 68, 68, 0.6);
       z-index: -1; }
 
 h1, h2 {
@@ -130,7 +130,7 @@ a {
   color: #ff702d; }
 
 main {
-  padding: 4rem;
+  padding: 3rem;
   height: 100%; }
   main#home {
     overflow: hidden; }
@@ -144,13 +144,22 @@ main {
       color: #ff702d;
       transition: all 0.7s ease-out; }
 
+.about_overlay {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(68, 68, 68, 0.9);
+  z-index: -1; }
+
 .about_info {
+  padding: 20px;
+  background: rgba(55, 55, 55, 0.8);
   grid-gap: 30px;
   display: grid;
   grid-template-areas: 'bio-image bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
-  .about_info p {
-    text-indent: 2.0em; }
   .about_info .bio_img {
     height: 250px;
     width: 250px;
@@ -159,7 +168,7 @@ main {
     border-radius: 50%;
     border: #ff702d 3px solid; }
   .about_info .bio {
-    text-align: center;
+    text-align: left;
     grid-area: bio; }
   .about_info .job_one {
     grid-area: job1; }
@@ -168,9 +177,11 @@ main {
   .about_info .job_three {
     grid-area: job3; }
   .about_info .job {
-    background: #515151;
-    padding: 0.5rem;
+    background: #535353;
+    padding: 1rem;
     border-bottom: #ff702d 6px solid; }
+  .about_info p {
+    text-indent: 2.0em; }
 
 .projects {
   display: grid;
@@ -268,8 +279,9 @@ main {
       font-size: 3rem; }
     main .home_description {
       font-size: 0.75rem; }
-    main .bio {
-      font-size: 0.8rem; }
+    main p {
+      font-size: 0.7rem;
+      font-weight: 500; }
   .about_info .bio_img {
     width: 150px;
     height: 150px; }
